@@ -1,3 +1,5 @@
+package com.segment.processor;
+
 public class RsqProcessor {
     private int[] tree;
     private int[] source;
