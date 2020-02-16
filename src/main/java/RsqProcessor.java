@@ -12,6 +12,25 @@ public class RsqProcessor {
         return query(0, 0, source.length - 1, l - 1, r - 1);
     }
 
+    public void modify(int pos, int val) {
+        modify(0, 0, source.length - 1, pos - 1, val);
+    }
+
+    private void modify(int v, int vl, int vr, int pos, int val) {
+        if (vl == vr) {
+            tree[v] = val;
+            return;
+        }
+
+        int vm = vl + (vr - vl) / 2;
+        if (pos <= vm)
+            modify(2 * v + 1, vl, vm, pos, val);
+        else
+            modify(2 * v + 2, vm + 1, vr, pos, val);
+
+        tree[v] = tree[2 * v + 1] + tree[2 * v + 2];
+    }
+
     private int query(int v, int vl, int vr, int l, int r) {
         if (r < vl || l > vr)
             return 0;
