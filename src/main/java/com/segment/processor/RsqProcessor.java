@@ -1,5 +1,8 @@
 package com.segment.processor;
 
+/**
+ * Change value on position
+ */
 public class RsqProcessor {
     private int[] tree;
     private int[] source;
