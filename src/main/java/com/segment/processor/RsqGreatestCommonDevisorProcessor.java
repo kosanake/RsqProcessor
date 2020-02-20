@@ -13,6 +13,10 @@ public class RsqGreatestCommonDevisorProcessor {
         build(0, 0, source.length - 1);
     }
 
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
     public int query(int l, int r) {
         return query(0, 0, source.length - 1, l - 1, r - 1);
     }
@@ -33,7 +37,7 @@ public class RsqGreatestCommonDevisorProcessor {
         else
             modify(2 * v + 2, vm + 1, vr, pos, val);
 
-        tree[v] = tree[2 * v + 1] + tree[2 * v + 2];
+        tree[v] = gcd(tree[2 * v + 1], tree[2 * v + 2]);
     }
 
     private int query(int v, int vl, int vr, int l, int r) {
@@ -45,7 +49,7 @@ public class RsqGreatestCommonDevisorProcessor {
         int vm = vl + (vr - vl) / 2;
         int ql = query(2 * v + 1, vl, vm, l, r);
         int qr = query(2 * v + 2, vm + 1, vr, l, r);
-        return ql + qr;
+        return gcd(ql, qr);
     }
 
     private void build(int v, int vl, int vr) {
@@ -56,6 +60,6 @@ public class RsqGreatestCommonDevisorProcessor {
         int vm = vl + (vr - vl) / 2;
         build(2 * v + 1, vl, vm);
         build(2 * v + 2, vm + 1, vr);
-        tree[v] = tree[2 * v + 1] + tree[2 * v + 2];
+        tree[v] = gcd(tree[2 * v + 1], tree[2 * v + 2]);
     }
 }
