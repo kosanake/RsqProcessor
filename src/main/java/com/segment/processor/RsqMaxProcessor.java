@@ -40,7 +40,7 @@ public class RsqMaxProcessor {
 
     private int query(int v, int vl, int vr, int l, int r) {
         if (r < vl || l > vr)
-            return 0;
+            return Integer.MIN_VALUE;
         else if (vl >= l && vr <= r)
             return tree[v];
 
