@@ -3,11 +3,11 @@ package com.segment.processor;
 /**
  * Change value on position
  */
-public class RsqProcessor {
+public class RsqZeroCountProcessor {
     private int[] tree;
     private int[] source;
 
-    public RsqProcessor(int[] source) {
+    public RsqZeroCountProcessor(int[] source) {
         this.source = source;
         this.tree = new int[4 * source.length];
         build(0, 0, source.length - 1);
@@ -23,7 +23,7 @@ public class RsqProcessor {
 
     private void modify(int v, int vl, int vr, int pos, int val) {
         if (vl == vr) {
-            tree[v] = val;
+            tree[v] = val == 0 ? 1 : 0;
             return;
         }
 
@@ -50,7 +50,7 @@ public class RsqProcessor {
 
     private void build(int v, int vl, int vr) {
         if (vl == vr) {
-            tree[v] = source[vl];
+            tree[v] = source[vl] == 0 ? 1 : 0;
             return;
         }
         int vm = vl + (vr - vl) / 2;
