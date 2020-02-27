@@ -3,7 +3,7 @@ package com.segment.processor;
 import javafx.util.Pair;
 
 /**
- * GCD with vsalue modification
+ * Index of max value on segment (with value modification)
  */
 public class RsqMaxIndexProcessor {
     private Pair<Integer, Integer>[] tree;

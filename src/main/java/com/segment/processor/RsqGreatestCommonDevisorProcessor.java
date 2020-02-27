@@ -1,7 +1,7 @@
 package com.segment.processor;
 
 /**
- * GCD with vsalue modification
+ * Greatest Common Divisor (with value modification)
  */
 public class RsqGreatestCommonDevisorProcessor {
     private int[] tree;
@@ -13,7 +13,7 @@ public class RsqGreatestCommonDevisorProcessor {
         build(0, 0, source.length - 1);
     }
 
-    public static int gcd(int a, int b) {
+    private static int gcd(int a, int b) {
         return b == 0 ? a : gcd(b, a % b);
     }
 

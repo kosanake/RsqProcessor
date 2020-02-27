@@ -1,7 +1,7 @@
 package com.segment.processor;
 
 /**
- * Change value on position
+ * Zero count on segment (vith value modification)
  */
 public class RsqZeroCountProcessor {
     private int[] tree;

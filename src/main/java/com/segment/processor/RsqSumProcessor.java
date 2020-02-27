@@ -1,7 +1,7 @@
 package com.segment.processor;
 
 /**
- * Change value on position
+ * Sum on segment (with value modification)
  */
 public class RsqSumProcessor {
     private int[] tree;

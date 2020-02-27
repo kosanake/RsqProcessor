@@ -3,7 +3,7 @@ package com.segment.processor;
 import static java.lang.Math.max;
 
 /**
- * GCD with vsalue modification
+ * Max value on segment (with value modification)
  */
 public class RsqMaxProcessor {
     private int[] tree;

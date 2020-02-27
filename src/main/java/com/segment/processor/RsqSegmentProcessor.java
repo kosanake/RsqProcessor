@@ -1,7 +1,7 @@
 package com.segment.processor;
 
 /**
- * Add value to segment
+ * Sum on segment (with adding value to segment)
  */
 public class RsqSegmentProcessor {
     int[] source;
